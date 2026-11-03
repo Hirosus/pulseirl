@@ -7,6 +7,5 @@ build/
 .env.local
 .DS_Store
 *.log
-.taste-skill/
 coverage/
 .turbo/

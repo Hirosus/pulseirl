@@ -11,16 +11,17 @@
   "scripts": {
     "build": "npm run --workspaces --if-present build",
     "test": "vitest run",
-    "lint": "node ./taste-skill-lint.mjs"
+    "lint": "tsc --noEmit"
   },
   "devDependencies": {
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"
   },
   "dependencies": {
-    "@types/react": "^19.3.0",
-    "@types/react-dom": "^19.3.0",
-    "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "next": "^14.2.35",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }

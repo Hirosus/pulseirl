@@ -68,8 +68,8 @@ During flash drops (e.g. 50 tickets released to 5,000 concurrent attendees), nai
 - Guarantees deterministic, identical variant allocation across mobile, web, and microservices without database lookups.
 - Powers statistical A/B holdout groups (`fast_checkout_holdout`) tracking conversion funnels from drop view to completed pass.
 
-### 4. Tactile Physical Pass & Door Operations Terminal (Anti-Slop UI)
-- Fully compliant with **tasteskill v2** (0 linter failures). Replaces generic AI-slop templates (floating glass cards, pastel gradients, arbitrary emojis) with authentic physical subject matter:
+### 4. Tactile Physical Pass & Door Operations Terminal
+- Grounded in authentic physical event artifacts and high-density operational ledgers:
   - **Flutter Mobile Client:** Built as a die-cut physical admittance pass with perforated tear lines, circular edge notches, stamped serial numbers, and offline-verifiable HMAC-SHA256 QR passes.
   - **Next.js 14 Web Portal:** Designed as an achromatic, high-density door operations terminal and live concurrency ledger with tabular numeric alignment.
 
