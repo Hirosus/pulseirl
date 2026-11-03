@@ -9,6 +9,8 @@
 
 > **PulseIRL** is an enterprise-grade social event and flash-meetup platform engineered for real-life human connection. Built to solve high-demand ticketing spikes, zero-drift concurrency locking, sub-second live availability broadcasts, and data-driven product experimentation.
 
+🎮 **Live Interactive Experience:** [https://hirosus.github.io/pulseirl/](https://hirosus.github.io/pulseirl/) *(Explore the interactive Flutter mobile pass & Next.js operational terminal in your browser)*
+
 ---
 
 ## 🏛️ System Architecture
@@ -170,7 +172,6 @@ Detailed technical planning documents are maintained in `docs/rfcs/`:
 
 ## 👨‍💻 Author
 
-**Olaiya Damilola Solomon**  
-*Fullstack & Distributed Systems Engineer*  
+**Hirosus**  
 - GitHub: [@Hirosus](https://github.com/Hirosus)  
 - Email: patriarchhiro@gmail.com
