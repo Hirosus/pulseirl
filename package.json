@@ -1,0 +1,20 @@
+{
+  "name": "pulseirl-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Enterprise AI-powered real-life social activity & high-concurrency booking platform",
+  "author": "Olaiya Damilola Solomon <patriarchhiro@gmail.com>",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run --workspaces --if-present build",
+    "test": "vitest run",
+    "lint": "node ./taste-skill-lint.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}
