@@ -1,0 +1,127 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum EventStatus {
+  UPCOMING
+  LIVE_DROP
+  SOLD_OUT
+  CONCLUDED
+}
+
+enum SlotStatus {
+  AVAILABLE
+  HELD
+  CONFIRMED
+}
+
+enum BookingStatus {
+  CONFIRMED
+  CANCELLED
+}
+
+model User {
+  id          String       @id @default(uuid())
+  phone       String       @unique
+  name        String
+  trustScore  Int          @default(100)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  bookings    Booking[]
+  inviteCodes InviteCode[] @relation("UserInvites")
+
+  @@index([phone])
+}
+
+model Event {
+  id             String       @id @default(uuid())
+  title          String
+  description    String
+  venue          String
+  latitude       Float
+  longitude      Float
+  capacity       Int
+  availableSeats Int
+  dropTime       DateTime
+  status         EventStatus  @default(UPCOMING)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  slots          EventSlot[]
+  bookings       Booking[]
+
+  @@index([status, dropTime])
+  @@index([latitude, longitude])
+}
+
+model EventSlot {
+  id             String      @id @default(uuid())
+  eventId        String
+  slotNumber     Int
+  status         SlotStatus  @default(AVAILABLE)
+  version        Int         @default(1)
+  heldByUserId   String?
+  heldUntil      DateTime?
+  event          Event       @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  booking        Booking?
+
+  @@unique([eventId, slotNumber])
+  @@index([eventId, status])
+}
+
+model Booking {
+  id             String         @id @default(uuid())
+  userId         String
+  eventId        String
+  slotId         String         @unique
+  idempotencyKey String         @unique
+  qrSignature    String
+  status         BookingStatus  @default(CONFIRMED)
+  createdAt      DateTime       @default(now())
+  user           User           @relation(fields: [userId], references: [id])
+  event          Event          @relation(fields: [eventId], references: [id])
+  slot           EventSlot      @relation(fields: [slotId], references: [id])
+
+  @@index([userId])
+  @@index([eventId])
+  @@index([idempotencyKey])
+}
+
+model InviteCode {
+  id         String   @id @default(uuid())
+  code       String   @unique
+  creatorId  String
+  usedCount  Int      @default(0)
+  maxUses    Int      @default(5)
+  active     Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  creator    User     @relation("UserInvites", fields: [creatorId], references: [id])
+
+  @@index([code])
+}
+
+model FeatureFlag {
+  id                String   @id @default(uuid())
+  key               String   @unique
+  rolloutPercentage Int      @default(0)
+  description       String?
+  enabled           Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([key])
+}
+
+model AnalyticsEvent {
+  id        String   @id @default(uuid())
+  eventName String
+  userId    String?
+  properties Json
+  timestamp DateTime @default(now())
+
+  @@index([eventName, timestamp])
+}
