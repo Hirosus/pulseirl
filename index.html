@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PulseIRL — Live Product Demonstration</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f5f4f0;
+      color: #121212;
+    }
+    .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
+    .hard-shadow {
+      box-shadow: 4px 4px 0px 0px #121212;
+    }
+    .hard-shadow-sm {
+      box-shadow: 2px 2px 0px 0px #121212;
+    }
+    .ticket-notch-left {
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #f5f4f0;
+      border-right: 2px solid #121212;
+      transform: translateY(-50%);
+    }
+    .ticket-notch-right {
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #f5f4f0;
+      border-left: 2px solid #121212;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+
+  <div class="max-w-6xl mx-auto space-y-8">
+    
+    <!-- Top System Banner -->
+    <header class="border-b-2 border-[#121212] pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 px-2.5 py-1 bg-[#fde047] border-2 border-[#121212] font-display font-bold text-xs uppercase mb-2">
+          <span class="w-2 h-2 bg-[#16a34a] border border-[#121212]"></span>
+          Platform Shipped & Ready • 29/29 Tests Passing
+        </div>
+        <h1 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight text-[#121212]">
+          PulseIRL Live Systems Preview
+        </h1>
+        <p class="text-sm text-[#404040] mt-1 max-w-2xl">
+          Complete fullstack demonstration: Flutter Mobile Admittance Pass (with live spot lock & cryptographic QR verification) alongside the Next.js 14 High-Density Door Terminal.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="text-right">
+          <div class="font-display font-bold text-xs uppercase text-[#737373]">Engine Mode</div>
+          <div class="font-display font-bold text-sm text-[#121212]">Redis Lua + PostgreSQL ACID</div>
+        </div>
+        <div class="w-3.5 h-3.5 bg-[#16a34a] border-2 border-[#121212]"></div>
+      </div>
+    </header>
+
+    <!-- Main Workspace Stage -->
+    <main class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- Column 1: Flutter Mobile App (Attendee Experience) -->
+      <section data-ui class="lg:col-span-5 flex flex-col items-center">
+        
+        <div class="w-full flex items-center justify-between mb-3 px-1">
+          <span class="font-display font-bold text-xs uppercase text-[#121212]">Flutter Mobile Client</span>
+          <span class="text-xs text-[#525252]">Screen: Flash Drop & Live Pass</span>
+        </div>
+
+        <!-- Phone Shell -->
+        <div class="w-full max-w-[360px] bg-[#121212] p-3 rounded-[32px] hard-shadow">
+          <div class="bg-[#ffffff] rounded-[24px] p-5 border-2 border-[#121212] flex flex-col justify-between min-h-[640px]">
+            
+            <!-- Mobile Top Bar -->
+            <div>
+              <div class="flex items-center justify-between pb-3 border-b-2 border-[#121212] text-xs font-display font-bold">
+                <span class="tracking-tight">PULSE:IRL</span>
+                <span class="px-2 py-0.5 bg-[#fde047] border border-[#121212]">LAGOS / VI</span>
+              </div>
+
+              <!-- Ticket Pass Container -->
+              <div id="mobile-ticket-container" class="mt-4 border-2 border-[#121212] bg-[#fffdf5] hard-shadow-sm relative overflow-hidden">
+                
+                <!-- Ticket Top Section -->
+                <div class="p-4 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span id="ticket-badge" class="text-xs font-display font-bold uppercase bg-[#dc2626] text-[#ffffff] px-2 py-0.5">
+                      Drop Live
+                    </span>
+                    <span class="font-display text-xs font-bold text-[#121212]">
+                      PASS NO. 00412
+                    </span>
+                  </div>
+
+                  <h2 class="font-display text-xl font-bold leading-tight text-[#121212]">
+                    Rooftop Vinyl Session & Mezcal Tasting
+                  </h2>
+
+                  <div class="text-xs text-[#404040] space-y-0.5 pt-1">
+                    <div>Location: 14 Akin Adesola, Victoria Island</div>
+                    <div>Schedule: Friday, 20:00 WAT</div>
+                    <div>Host: The Native Sound System</div>
+                  </div>
+                </div>
+
+                <!-- Perforated Tear Line with Edge Notches -->
+                <div class="relative py-2">
+                  <div class="border-t-2 border-dashed border-[#121212] w-full"></div>
+                  <div class="ticket-notch-left"></div>
+                  <div class="ticket-notch-right"></div>
+                </div>
+
+                <!-- Ticket Bottom Section -->
+                <div class="p-4 bg-[#ffffff] space-y-3">
+                  
+                  <div class="flex items-end justify-between">
+                    <div>
+                      <div class="text-xs text-[#525252]">Inventory Status</div>
+                      <div class="font-display text-2xl font-extrabold text-[#121212] tabular">
+                        <span id="mobile-remaining">08</span> <span class="text-sm font-normal text-[#737373]">/ 40 spots</span>
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-xs text-[#525252]">Hold Window</div>
+                      <div class="font-display text-sm font-bold text-[#121212] tabular" id="hold-timer">
+                        04:59
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Inventory Bar -->
+                  <div class="w-full h-3 border-2 border-[#121212] bg-[#f5f4f0] overflow-hidden">
+                    <div id="mobile-progress" class="h-full bg-[#121212]" style="width: 80%"></div>
+                  </div>
+
+                  <!-- QR Code Pass Container (Appears when locked) -->
+                  <div id="qr-container" class="hidden border-2 border-[#121212] p-3 bg-[#fffdf5] text-center space-y-2">
+                    <div class="text-xs font-display font-bold uppercase text-[#16a34a]">
+                      Offline Verified Pass Ready
+                    </div>
+                    <!-- SVG Cryptographic QR Mock -->
+                    <div class="mx-auto w-28 h-28 bg-[#121212] p-1 border border-[#121212] flex items-center justify-center">
+                      <div class="w-full h-full bg-[#ffffff] p-2 flex flex-col justify-between">
+                        <div class="flex justify-between">
+                          <div class="w-4 h-4 bg-[#121212]"></div>
+                          <div class="w-4 h-4 bg-[#121212]"></div>
+                        </div>
+                        <div class="text-[9px] font-mono font-bold tracking-tighter text-center">HMAC-SHA256</div>
+                        <div class="flex justify-between">
+                          <div class="w-4 h-4 bg-[#121212]"></div>
+                          <div class="w-4 h-4 bg-[#121212]"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-[10px] text-[#525252] font-mono truncate">
+                      SIG: 88f921...c992a01
+                    </div>
+                  </div>
+
+                  <!-- AI Vibe Match Profile Block -->
+                  <div id="chemistry-box" class="border-2 border-[#121212] p-2.5 bg-[#f5f4f0]">
+                    <div class="font-display text-xs font-bold text-[#121212] uppercase mb-1">
+                      Verified Attendee Chemistry
+                    </div>
+                    <div class="text-xs text-[#404040]">
+                      High compatibility based on shared taste in rare vinyl pressings and modern architecture.
+                    </div>
+                    <div class="flex flex-wrap gap-1 mt-2">
+                      <span class="text-[11px] font-bold px-1.5 py-0.5 bg-[#ffffff] border border-[#121212]">Afrobeats / Highlife</span>
+                      <span class="text-[11px] font-bold px-1.5 py-0.5 bg-[#ffffff] border border-[#121212]">Product Design</span>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Mobile Action Button -->
+            <div class="pt-4 mt-auto">
+              <button id="mobile-action-btn" onclick="simulateMobileLock()" class="w-full py-3.5 px-4 bg-[#fde047] text-[#121212] font-display font-extrabold text-sm uppercase tracking-wide border-2 border-[#121212] hard-shadow-sm hover:bg-[#facc15] active:translate-x-[2px] active:translate-y-[2px] transition-transform">
+                Lock Spot (Redis Lease)
+              </button>
+              <div id="mobile-status-text" class="text-xs text-center text-[#525252] mt-2 font-display">
+                Guaranteed zero double-booking via PostgreSQL row lock
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Column 2: Next.js 14 Web Portal (Door Terminal & Telemetry Ledger) -->
+      <section data-ui class="lg:col-span-7 space-y-6">
+        
+        <div class="flex items-center justify-between mb-3 px-1">
+          <span class="font-display font-bold text-xs uppercase text-[#121212]">Next.js 14 Web Portal</span>
+          <span class="text-xs text-[#525252]">Route: /ops/drops/rooftop-vinyl</span>
+        </div>
+
+        <div class="border-2 border-[#121212] bg-[#ffffff] p-6 hard-shadow space-y-6">
+          
+          <!-- Ops Top Bar -->
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between pb-4 border-b-2 border-[#121212] gap-4">
+            <div>
+              <div class="flex items-center gap-2">
+                <h2 class="font-display text-2xl font-extrabold text-[#121212]">
+                  High-Demand Drop Terminal
+                </h2>
+                <span class="px-2 py-0.5 text-xs font-display font-bold bg-[#16a34a] text-[#ffffff] border border-[#121212]">
+                  WEBSOCKET ACTIVE
+                </span>
+              </div>
+              <p class="text-xs text-[#525252] mt-1">
+                Active Drop: Rooftop Vinyl Session • Drop ID: ev_99182 • Cluster: Lagos VI
+              </p>
+            </div>
+
+            <div class="text-right">
+              <div class="text-xs text-[#737373] uppercase font-display font-bold">P99 DB Lock Latency</div>
+              <div class="font-display text-xl font-extrabold text-[#121212] tabular">
+                8.4ms
+              </div>
+            </div>
+          </div>
+
+          <!-- Quantitative Metrics Grid -->
+          <div class="grid grid-cols-3 gap-4">
+            <div class="border-2 border-[#121212] p-3 bg-[#fffdf5]">
+              <div class="text-xs text-[#525252] font-display font-bold uppercase">Requests / Sec</div>
+              <div class="font-display text-2xl font-extrabold text-[#121212] tabular mt-1">240.2</div>
+              <div class="text-xs text-[#16a34a] mt-0.5 font-bold">Zero packet drops</div>
+            </div>
+
+            <div class="border-2 border-[#121212] p-3 bg-[#fffdf5]">
+              <div class="text-xs text-[#525252] font-display font-bold uppercase">Active Redis Holds</div>
+              <div id="web-active-holds" class="font-display text-2xl font-extrabold text-[#121212] tabular mt-1">32</div>
+              <div class="text-xs text-[#525252] mt-0.5">300s TTL auto-expiry</div>
+            </div>
+
+            <div class="border-2 border-[#121212] p-3 bg-[#fffdf5]">
+              <div class="text-xs text-[#525252] font-display font-bold uppercase">Double-Bookings</div>
+              <div class="font-display text-2xl font-extrabold text-[#16a34a] tabular mt-1">0</div>
+              <div class="text-xs text-[#16a34a] mt-0.5 font-bold">100% Invariant Met</div>
+            </div>
+          </div>
+
+          <!-- Feature Flag Experiment Section -->
+          <div class="border-2 border-[#121212] p-4 bg-[#f5f4f0] space-y-3">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="font-display font-bold text-sm text-[#121212]">
+                  Experiment: fast_checkout_holdout
+                </div>
+                <div class="text-xs text-[#525252]">
+                  MurmurHash3 deterministic bucketing across registered user IDs.
+                </div>
+              </div>
+              <button onclick="toggleWebFlag()" id="web-flag-btn" class="px-3 py-1.5 font-display font-bold text-xs uppercase bg-[#121212] text-[#ffffff] border-2 border-[#121212] hover:bg-[#262626]">
+                Enabled (50% Rollout)
+              </button>
+            </div>
+
+            <!-- Experiment Funnel Table -->
+            <table class="w-full text-xs border-collapse">
+              <thead>
+                <tr class="border-b-2 border-[#121212] text-left font-display">
+                  <th class="py-1.5">Variant</th>
+                  <th class="py-1.5">Users</th>
+                  <th class="py-1.5">Reserved</th>
+                  <th class="py-1.5">Completed</th>
+                  <th class="py-1.5 text-right">Conversion</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[#d4d4d4] font-display tabular">
+                <tr>
+                  <td class="py-2 font-bold">Variant A (1-Tap Hold)</td>
+                  <td class="py-2">2,410</td>
+                  <td class="py-2">1,820</td>
+                  <td class="py-2">1,643</td>
+                  <td class="py-2 text-right font-extrabold text-[#16a34a]">68.1%</td>
+                </tr>
+                <tr>
+                  <td class="py-2 text-[#737373]">Variant B (Standard Form)</td>
+                  <td class="py-2 text-[#737373]">2,411</td>
+                  <td class="py-2 text-[#737373]">1,450</td>
+                  <td class="py-2 text-[#737373]">1,239</td>
+                  <td class="py-2 text-right font-bold text-[#737373]">51.3%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Live Event Bus Audit Ledger -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-display font-bold text-xs uppercase text-[#121212]">Live Concurrency Audit Ledger</span>
+              <span class="text-xs text-[#737373]">Redis Pub/Sub Stream</span>
+            </div>
+
+            <div id="web-audit-feed" class="border-2 border-[#121212] p-3 bg-[#fffdf5] font-display text-xs space-y-1.5 max-h-40 overflow-y-auto">
+              <div class="flex justify-between text-[#121212]">
+                <span>[18:14:02] LUA_DECR: slot_08 reserved by user_88291a (TTL: 300s)</span>
+                <span class="text-[#737373]">0.8ms</span>
+              </div>
+              <div class="flex justify-between text-[#121212]">
+                <span>[18:14:03] PG_TX: SELECT FOR UPDATE on event_inventory committed</span>
+                <span class="text-[#737373]">7.2ms</span>
+              </div>
+              <div class="flex justify-between text-[#121212]">
+                <span>[18:14:03] WSS_BROADCAST: channel:ev_99182:inventory (remaining: 8)</span>
+                <span class="text-[#737373]">2.1ms</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script>
+    let isLocked = false;
+    let flagOn = true;
+
+    function simulateMobileLock() {
+      const btn = document.getElementById('mobile-action-btn');
+      const statusText = document.getElementById('mobile-status-text');
+      const qrBox = document.getElementById('qr-container');
+      const chemistryBox = document.getElementById('chemistry-box');
+      const remainingSpan = document.getElementById('mobile-remaining');
+      const progressBar = document.getElementById('mobile-progress');
+      const badge = document.getElementById('ticket-badge');
+      const audit = document.getElementById('web-audit-feed');
+      const holdsCounter = document.getElementById('web-active-holds');
+
+      if (!isLocked) {
+        btn.disabled = true;
+        btn.innerText = "Acquiring Redis Lock...";
+
+        setTimeout(() => {
+          isLocked = true;
+          btn.disabled = false;
+          btn.innerText = "Confirm Checkout & Issue Pass";
+          btn.className = "w-full py-3.5 px-4 bg-[#16a34a] text-[#ffffff] font-display font-extrabold text-sm uppercase tracking-wide border-2 border-[#121212] hard-shadow-sm";
+          statusText.innerHTML = "<span class='font-bold text-[#16a34a]'>Spot Held for 04:59 • Key: reserve:ev_99182:current_user</span>";
+          
+          remainingSpan.innerText = "07";
+          progressBar.style.width = "82.5%";
+          badge.innerText = "HOLD ACTIVE";
+          badge.className = "text-xs font-display font-bold uppercase bg-[#16a34a] text-[#ffffff] px-2 py-0.5";
+          holdsCounter.innerText = "33";
+
+          const log = document.createElement('div');
+          log.className = "flex justify-between text-[#16a34a] font-bold";
+          log.innerHTML = `<span>[${new Date().toLocaleTimeString()}] LUA_DECR: slot_08 locked (TTL: 300s)</span> <span>0.9ms</span>`;
+          audit.prepend(log);
+        }, 350);
+      } else {
+        btn.disabled = true;
+        btn.innerText = "Pass Issued (Admitted)";
+        btn.className = "w-full py-3.5 px-4 bg-[#121212] text-[#ffffff] font-display font-extrabold text-sm uppercase tracking-wide border-2 border-[#121212]";
+        statusText.innerHTML = "<span class='font-bold text-[#121212]'>✓ PostgreSQL Transaction Committed • Idempotency Verified</span>";
+        
+        qrBox.classList.remove('hidden');
+        chemistryBox.classList.add('hidden');
+
+        const log = document.createElement('div');
+        log.className = "flex justify-between text-[#121212] font-bold";
+        log.innerHTML = `<span>[${new Date().toLocaleTimeString()}] PG_TX: Booking bk_9921 issued (HMAC Verified)</span> <span>6.8ms</span>`;
+        audit.prepend(log);
+      }
+    }
+
+    function toggleWebFlag() {
+      flagOn = !flagOn;
+      const btn = document.getElementById('web-flag-btn');
+      if (flagOn) {
+        btn.innerText = "Enabled (50% Rollout)";
+        btn.className = "px-3 py-1.5 font-display font-bold text-xs uppercase bg-[#121212] text-[#ffffff] border-2 border-[#121212] hover:bg-[#262626]";
+      } else {
+        btn.innerText = "Disabled (0% Rollout)";
+        btn.className = "px-3 py-1.5 font-display font-bold text-xs uppercase bg-[#d4d4d4] text-[#121212] border-2 border-[#121212] hover:bg-[#e5e5e5]";
+      }
+    }
+  </script>
+</body>
+</html>
